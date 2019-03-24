@@ -8,18 +8,18 @@ import com.techfun.jdbc.repository.RideRepository;
 
 @Service("rideService")
 public class RideServiceImpl implements RideService {
-	
+
 	@Autowired
 	private RideRepository rideRepositoryImpl;
-	
+
 	public void createRide(Ride ride) {
 		rideRepositoryImpl.createRide(ride);
 	}
-	
+
 	public void updateRide(Ride ride) {
 		rideRepositoryImpl.updateRide(ride);
 	}
-	
+
 	public void deleteRide(Ride ride) {
 		rideRepositoryImpl.deleteRide(ride);
 	}

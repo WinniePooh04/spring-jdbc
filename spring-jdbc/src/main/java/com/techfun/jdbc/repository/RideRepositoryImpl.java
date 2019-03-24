@@ -17,7 +17,7 @@ public class RideRepositoryImpl implements RideRepository {
 		String insertTableSQL = "INSERT INTO ride(name,duration) values(?,?)";
 
 		try (Connection dbConnection = ConnectionHelper.getDBConnection();
-				PreparedStatement preparedStatement = dbConnection.prepareStatement(insertTableSQL)	){
+				PreparedStatement preparedStatement = dbConnection.prepareStatement(insertTableSQL)) {
 
 			preparedStatement.setString(1, ride.getName());
 			preparedStatement.setInt(2, ride.getDuration());
@@ -29,15 +29,13 @@ public class RideRepositoryImpl implements RideRepository {
 
 		}
 	}
-	
+
 	public void updateRide(Ride ride) {
 
-		String insertTableSQL = "UPDATE ride SET name = ?,duration = ? "
-                + " WHERE id = ?";
-
+		String insertTableSQL = "UPDATE ride SET name = ?,duration = ? " + " WHERE id = ?";
 
 		try (Connection dbConnection = ConnectionHelper.getDBConnection();
-				PreparedStatement preparedStatement = dbConnection.prepareStatement(insertTableSQL)	){
+				PreparedStatement preparedStatement = dbConnection.prepareStatement(insertTableSQL)) {
 
 			preparedStatement.setString(1, ride.getName());
 			preparedStatement.setInt(2, ride.getDuration());
@@ -50,14 +48,13 @@ public class RideRepositoryImpl implements RideRepository {
 
 		}
 	}
-	
+
 	public void deleteRide(Ride ride) {
 
 		String deleteTableSQL = "DELETE from ride WHERE id = ?";
 
-
 		try (Connection dbConnection = ConnectionHelper.getDBConnection();
-			PreparedStatement preparedStatement = dbConnection.prepareStatement(deleteTableSQL)	){
+				PreparedStatement preparedStatement = dbConnection.prepareStatement(deleteTableSQL)) {
 
 			preparedStatement.setInt(1, ride.getId());
 
@@ -66,7 +63,7 @@ public class RideRepositoryImpl implements RideRepository {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 
-		} 
+		}
 	}
 
 }
