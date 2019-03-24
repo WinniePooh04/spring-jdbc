@@ -10,7 +10,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		Ride ride = new Ride();
 		//testCreateRide(ride);
-		//testUpdateRide(ride);
+		testUpdateRide(ride);
 		testDeleteRide(ride);		
 	}
 	
