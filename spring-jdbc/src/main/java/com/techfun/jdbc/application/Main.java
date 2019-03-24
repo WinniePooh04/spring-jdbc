@@ -21,7 +21,7 @@ public class Main {
 
 	private static void testCreateRide(RideService rideService) {
 		Ride ride = new Ride();
-		ride.setName("Phyo Paing");
+		ride.setName("John Smith");
 		ride.setDuration(15);
 		rideService.createRide(ride);
 		System.out.println("Process Successful completed!");
@@ -29,9 +29,9 @@ public class Main {
 
 	private static void testUpdateRide(RideService rideService) {
 		Ride ride = new Ride();
-		ride.setName("Pyae Phyo");
-		ride.setDuration(11);
-		ride.setId(1);
+		ride.setName("Dove");
+		ride.setDuration(16);
+		ride.setId(3);
 
 		rideService.updateRide(ride);
 		System.out.println("Process Successful completed!");
