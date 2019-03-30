@@ -14,8 +14,8 @@ public class EmployeeMain {
 		EmployeeService employeeService = appContext.getBean("employeeService", EmployeeService.class);
 
 		insertEmployee(employeeService);
-		//updateEmployee(employeeService);
-		//deleteEmployee(employeeService);
+		// updateEmployee(employeeService);
+		// deleteEmployee(employeeService);
 	}
 
 	private static void insertEmployee(EmployeeService employeeService) {
@@ -25,16 +25,18 @@ public class EmployeeMain {
 		emp.setAddress("Tarmwe");
 
 		employeeService.insertEmployee(emp);
+		System.out.println("Insert record successfully");
 	}
 
 	private static void updateEmployee(EmployeeService employeeService) {
 		Employee emp = new Employee();
 		emp.setName("John Lwin");
-		emp.setAge(35);
+		emp.setAge(33);
 		emp.setAddress("ShweGonDaing");
 		emp.setId(1);
 
 		employeeService.updateEmployee(emp);
+		System.out.println("Update record successfully");
 	}
 
 	private static void deleteEmployee(EmployeeService employeeService) {
@@ -42,5 +44,6 @@ public class EmployeeMain {
 		emp.setId(2);
 
 		employeeService.deleteEmployee(emp);
+		System.out.println("Delete record successfully");
 	}
 }
