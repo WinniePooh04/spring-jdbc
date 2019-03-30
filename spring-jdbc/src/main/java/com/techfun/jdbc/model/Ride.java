@@ -1,15 +1,15 @@
 package com.techfun.jdbc.model;
 
 public class Ride {
-	
+
 	private Integer id;
 	private String name;
 	private int duration;
-	
+
 	public int getDuration() {
 		return duration;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}

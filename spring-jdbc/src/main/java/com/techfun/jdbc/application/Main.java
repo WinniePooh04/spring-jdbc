@@ -1,5 +1,7 @@
 package com.techfun.jdbc.application;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,15 +16,16 @@ public class Main {
 		RideService rideService = appContext.getBean("rideService", RideService.class);
 		// TODO Auto-generated method stub
 
-		testCreateRide(rideService);
+		//selectRide(rideService);
+		 testCreateRide(rideService);
 		// testUpdateRide(rideService);
 		// testDeleteRide(rideService);
 	}
 
 	private static void testCreateRide(RideService rideService) {
 		Ride ride = new Ride();
-		ride.setName("John Smith");
-		ride.setDuration(15);
+		ride.setName("John Smith246");
+		ride.setDuration(18);
 		rideService.createRide(ride);
 		System.out.println("Process Successful completed!");
 	}
@@ -43,5 +46,15 @@ public class Main {
 
 		rideService.deleteRide(ride);
 		System.out.println("Process Successful completed!");
+	}
+
+	private static void selectRide(RideService rideService) {
+
+		List<Ride> rideList = rideService.selectRide();
+		for (Ride ride : rideList) {
+			System.out.println("Ride id: " + ride.getId());
+			System.out.println("Name:" + ride.getName());
+			System.out.println("Duration:" + ride.getDuration());
+		}
 	}
 }

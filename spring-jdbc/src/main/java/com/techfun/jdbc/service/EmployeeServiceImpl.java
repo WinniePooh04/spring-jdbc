@@ -1,5 +1,7 @@
 package com.techfun.jdbc.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public void deleteEmployee(Employee employee) {
 		employeeRepository.deleteEmployee(employee);
+
+	}
+
+	@Override
+	public List<Employee> selectEmployee() {
+		return employeeRepository.selectEmployee();
 
 	}
 
