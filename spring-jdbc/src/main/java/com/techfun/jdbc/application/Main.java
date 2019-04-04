@@ -24,7 +24,7 @@ public class Main {
 
 	private static void testCreateRide(RideService rideService) {
 		Ride ride = new Ride();
-		ride.setName("John Smith246");
+		ride.setName("John Smith569");
 		ride.setDuration(18);
 		rideService.createRide(ride);
 		System.out.println("Process Successful completed!");
