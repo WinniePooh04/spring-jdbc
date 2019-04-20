@@ -13,15 +13,8 @@ public class StaffServiceImpl implements StaffService {
 	private StaffRepository staffRepository;
 
 	@Override
-	public int insertStaff(Staff staff) {
-		int result = 0;
-		try {
-			result = staffRepository.insertStaff(staff);
-		} catch (Exception e) {
-			String errMsg = e.getMessage();
-			System.out.println(errMsg);
-		}
-		return result;
+	public void insertStaff(Staff staff) {
+		staffRepository.insertStaff(staff);
 	}
 
 	@Override

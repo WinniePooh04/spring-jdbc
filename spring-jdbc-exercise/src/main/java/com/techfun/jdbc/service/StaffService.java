@@ -4,7 +4,7 @@ import com.techfun.jdbc.model.Staff;
 
 public interface StaffService {
 
-	int insertStaff(Staff staff) throws Exception;
+	void insertStaff(Staff staff) throws Exception;
 
 	void updateStaff(Staff staff);
 	

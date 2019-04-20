@@ -2,6 +2,7 @@ package com.techfun.jdbc.application;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.dao.DuplicateKeyException;
 
 import com.techfun.jdbc.model.Staff;
 import com.techfun.jdbc.service.StaffService;
@@ -25,11 +26,10 @@ public class StaffMain {
 		staff.setAddress("Hlaing");
 		staff.setRole_id(1);
 		staff.setId(3);
-
-		int result = staffService.insertStaff(staff);
-		if (result > 0) {
+		try {
+			staffService.insertStaff(staff);
 			System.out.println("Insert record successfully");
-		} else {
+		} catch (DuplicateKeyException e) {
 			System.out.print("Duplicate staff: you can't insert");
 		}
 	}
